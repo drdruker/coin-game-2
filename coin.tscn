@@ -1,0 +1,71 @@
+[gd_scene load_steps=15 format=3 uid="uid://gl752ah56mcu"]
+
+[ext_resource type="Script" path="res://coin.gd" id="1_mi7uy"]
+[ext_resource type="Texture2D" uid="uid://c2o1v3ilnuawf" path="res://assets/coin/coin-frame-1.png" id="1_xfgkm"]
+[ext_resource type="Texture2D" uid="uid://ct1vmjkd88pal" path="res://assets/coin/coin-frame-2.png" id="2_vywkp"]
+[ext_resource type="Texture2D" uid="uid://gwffflmlmt7m" path="res://assets/coin/coin-frame-3.png" id="3_1hxjk"]
+[ext_resource type="Texture2D" uid="uid://nbbekpxh82s2" path="res://assets/coin/coin-frame-4.png" id="4_847nf"]
+[ext_resource type="Texture2D" uid="uid://c2sbvvdnv42oe" path="res://assets/coin/coin-frame-5.png" id="5_75l2h"]
+[ext_resource type="Texture2D" uid="uid://gfda3gi8y02m" path="res://assets/coin/coin-frame-6.png" id="6_rsht3"]
+[ext_resource type="Texture2D" uid="uid://dbf56ndyp5on5" path="res://assets/coin/coin-frame-7.png" id="7_734sy"]
+[ext_resource type="Texture2D" uid="uid://dxwb0mik8ksg0" path="res://assets/coin/coin-frame-8.png" id="8_tmie5"]
+[ext_resource type="Texture2D" uid="uid://d1wsys7mfxxc7" path="res://assets/coin/coin-frame-9.png" id="9_dya5i"]
+[ext_resource type="Texture2D" uid="uid://cded640sf6f51" path="res://assets/coin/coin-frame-10.png" id="10_7trb5"]
+[ext_resource type="Texture2D" uid="uid://cbxyloywnbnhc" path="res://assets/coin/coin-frame-11.png" id="11_8hfcy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmigp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xfgkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vywkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1hxjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_847nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_75l2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rsht3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_734sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tmie5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dya5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7trb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8hfcy")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6cbs"]
+radius = 19.6469
+
+[node name="Coin" type="Area2D" groups=["coins"]]
+position = Vector2(45, 45)
+script = ExtResource("1_mi7uy")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_tmigp")
+animation = &"coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n6cbs")
